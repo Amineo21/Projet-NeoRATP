@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="{% static 'sncf/style.css' %}">
+    <!-- Polis -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Montserrat+Subrayada:wght@400;700&family=Roboto&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="name">
+
+            <h1>NeoRATP</h1>
+            <img src="{% static 'sncf/image.png' %}" alt="">
+        </div>
+        <nav>
+            <a href="http://127.0.0.1:8000/sncf/acceuil/">Acceuil</a>
+            <a href="http://127.0.0.1:8000/sncf/aleatoire/">Aléatoire</a>
+        </nav>
+    </header>
+
+
+    <section>
+        <h1>
+            Welcome to <span>NeoRATP</span>
+        </h1>
+
+        <table>
+           
+            <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Datails</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Cannes</td>
+                    <td>22h00</td>
+                    <td class="plus"><img src="" alt=""><button><a href="{% static 'sncf/Map tgv trajet/Cannes.png' %}">Voir</a></button></td>
+                </tr>
+                <tr>
+                    <th scope="row">35</th>
+                    <td>Spain</td>
+                    <td>22h15</td>
+                    <td class="plus"><button><a href="{% static 'sncf/Map tgv trajet/Spain.png' %}">Voir</a></button></td>
+
+                </tr>
+                <tr>
+                    <th scope="row">15</th>
+                    <td>Lille</td>
+                    <td>22h25</td>
+                    <td class="plus"><button><a href="{% static 'sncf/Map tgv trajet/Lille.png' %}">Voir</a></button></td>
+
+                </tr>
+                <tr>
+                    <th scope="row">40</th>
+                    <td>Strasbourg</td>
+                    <td>22h35</td>
+                    <td class="plus"><button><a href="{% static 'sncf/Map tgv trajet/Strasbourg.png' %}">Voir</a></button></td>
+
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Nice</td>
+                    <td>22h45</td>
+                    <td class="plus"><button><a href="{% static 'sncf/Map tgv trajet/Nice.png' %}">Voir</a></button></td>
+
+                </tr>
+        </table>
+
+    </section>
+
+    <style>
+
+
+
+
+        table {
+  border-collapse: collapse;
+  border: 2px solid #2A7E68;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: #29A383;
+}
+
+th,
+td {
+  border: 1px solid #2A7E68;
+  padding: 20px 50px;
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+    </style>
+</body>
+
+</html>

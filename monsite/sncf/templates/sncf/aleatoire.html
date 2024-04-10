@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aléatoire</title>
+    <link rel="stylesheet" href="{% static 'sncf/style.css' %}">
+    <!-- Polis -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Montserrat+Subrayada:wght@400;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <!-- lien pour jquery pour la fonction du bouton -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="name">
+
+            <h1>NeoRATP</h1>
+            <img src="{% static 'sncf/image.png' %}" alt="">
+        </div>
+        <nav>
+            <a href="http://127.0.0.1:8000/sncf/acceuil/">Acceuil</a>
+            <a href="http://127.0.0.1:8000/sncf/aleatoire/">Aléatoire</a>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Bienvenue dans la section Aléatoire !</h1>
+        <p>Ici en appuyant sur le bouton ci-dessous vous pourrez avoir une destination, un train et une horaire
+            aléatoire.</p>
+        <form action="">
+            <button id="bouton-selection">Destination aléatoire</button>
+        </form>
+
+        <table id="resultat">
+
+            <thead>
+                <tr>
+
+                    <th scope="col">N°</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Heure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{numero}}</th>
+                    <td>{{destination}}</td>
+                    <td>{{heure}}</td>
+
+                </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid #2A7E68;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        caption {
+            caption-side: bottom;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        thead,
+        tfoot {
+            background-color: #29A383;
+        }
+
+        th,
+        td {
+            border: 1px solid #2A7E68;
+            padding: 20px 50px;
+        }
+
+        td:last-of-type {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#bouton-random').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '/aleatoire/{{ train_id }}/',
+                });
+            });
+        });
+
+        // la requête ajax permet de communiquer avec un serveur web depuis le DOM,
+        // Grace à cet requête au moment où on appuis sur le bouton la page n'à
+        //pas besoin de se recharger constamment
+    </script>
+    <!-- Ce script permet au bouton de selectionner une donner aléatoire dans la base de donnée 
+Ici elle depend de la fonction aleatoire dans le fichier views.py-->
+</body>
+
+</html>
